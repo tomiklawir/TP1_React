@@ -1,3 +1,4 @@
+import './Formulario.css'
 function Formulario(){
     return(
         <div className="one-half column">

@@ -1,3 +1,4 @@
+import './Cita.css'
 function Cita(props) {
     return(
         <div className="cita">

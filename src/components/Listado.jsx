@@ -1,4 +1,5 @@
 import Cita from "./Cita";
+import './Listado.css'
 function Listado(){
     return(
         <div className="one-half column">

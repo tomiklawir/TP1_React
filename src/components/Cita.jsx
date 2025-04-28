@@ -1,12 +1,12 @@
 import './Cita.css'
-function Cita(props) {
+function Cita({mascota, dueno, fecha, hora, sintomas }) {
     return(
         <div className="cita">
-              <p>Mascota: <span>{props.mascota}</span></p>
-              <p>Dueño: <span>{props.dueno}</span></p>
-              <p>Fecha: <span>{props.fecha}</span></p>
-              <p>Hora: <span>{props.hora}</span></p>
-              <p>Sintomas: <span>{props.sintomas}</span></p><button className="button elimnar u-full-width">Eliminar ×</button>
+              <p>Mascota: <span>{mascota}</span></p>
+              <p>Dueño: <span>{dueno}</span></p>
+              <p>Fecha: <span>{fecha}</span></p>
+              <p>Hora: <span>{hora}</span></p>
+              <p>Sintomas: <span>{sintomas}</span></p><button className="button elimnar u-full-width">Eliminar ×</button>
             </div>
     )
 }

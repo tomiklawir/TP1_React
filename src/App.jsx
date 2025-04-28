@@ -1,33 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Formulario from './components/Formulario'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <h1>ADMINISTRADOR DE PACIENTES</h1>
+      <div className="container">
+        <div className="row">
+          <Formulario />
+          <div className="one-half column">
+            <h2>Administra tus citas</h2>
+            <div className="cita">
+              <p>Mascota: <span>Nina</span></p>
+              <p>Dueño: <span>Martin</span></p>
+              <p>Fecha: <span>2021-08-05</span></p>
+              <p>Hora: <span>08:20</span></p>
+              <p>Sintomas: <span>Le duele la pierna</span></p><button className="button elimnar u-full-width">Eliminar ×</button>
+            </div>
+            <div className="cita">
+              <p>Mascota: <span>Sifon</span></p>
+              <p>Dueño: <span>Flecha</span></p>
+              <p>Fecha: <span>2023-08-05</span></p>
+              <p>Hora: <span>09:24</span></p>
+              <p>Sintomas: <span>Duerme mucho</span></p><button className="button elimnar u-full-width">Eliminar ×</button>
+            </div>
+            <div className="cita">
+              <p>Mascota: <span>Floki</span></p>
+              <p>Dueño: <span>Ari</span></p>
+              <p>Fecha: <span>2023-08-05</span></p>
+              <p>Hora: <span>16:15</span></p>
+              <p>Sintomas: <span>No está comiendo</span></p><button className="button elimnar u-full-width">Eliminar ×</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }

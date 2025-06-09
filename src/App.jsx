@@ -1,10 +1,21 @@
 import './App.css'
 import Formulario from './components/Formulario'
 import Listado from './components/Listado'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function App() {
   const [citas, setCitas] = useState([])
+
+  useEffect(() => {
+    const citasLocalStorage = localStorage.getItem('citas')
+    if (citasLocalStorage) {
+      setCitas(JSON.parse(citasLocalStorage))
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('citas', JSON.stringify(citas))
+  }, [citas])
 
   const agregarCita = (cita) => {
     const confirmacion = confirm('¿Estás seguro que querés agregar esta cita?')

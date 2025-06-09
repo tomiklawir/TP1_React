@@ -8,9 +8,19 @@ function App() {
 
   useEffect(() => {
     const citasLocalStorage = localStorage.getItem('citas')
+    let parsedCitas = []
     if (citasLocalStorage) {
-      setCitas(JSON.parse(citasLocalStorage))
+      try {
+        const parsedResult = JSON.parse(citasLocalStorage)
+        if (Array.isArray(parsedResult)) {
+          parsedCitas = parsedResult
+        }
+      } catch (error) {
+        // Malformed JSON, parsedCitas remains []
+        console.error("Error parsing citas from localStorage:", error)
+      }
     }
+    setCitas(parsedCitas)
   }, [])
 
   useEffect(() => {

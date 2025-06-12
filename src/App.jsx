@@ -1,10 +1,19 @@
 import './App.css'
 import Formulario from './components/Formulario'
 import Listado from './components/Listado'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function App() {
-  const [citas, setCitas] = useState([])
+  // Inicializar estado desde localStorage o vacío
+  const [citas, setCitas] = useState(() => {
+    const citasGuardadas = localStorage.getItem('citas')
+    return citasGuardadas ? JSON.parse(citasGuardadas) : []
+  })
+
+  // Guardar en localStorage cada vez que cambian las citas
+  useEffect(() => {
+    localStorage.setItem('citas', JSON.stringify(citas))
+  }, [citas])
 
   const agregarCita = (cita) => {
     const confirmacion = confirm('¿Estás seguro que querés agregar esta cita?')
